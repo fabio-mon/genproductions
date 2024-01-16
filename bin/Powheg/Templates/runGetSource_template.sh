@@ -129,6 +129,11 @@ sed -i -e "s#COMPILER[ \t]*=[ \t]*ifort#COMPILER=gfortran#g" Makefile
 sed -i -e "s#132#none#g" Makefile
 sed -i -e "s#make -j FC#make FC#g" Makefile
 
+# If python version <= 3.6, remove incompatible option
+if python3 -c 'import sys; assert sys.version_info[:2] <= (3,6)' > /dev/null; then 
+    sed -i 's#shell python3-config --ldflags --embed#shell python3-config --ldflags#g' Makefile
+fi 
+
 # hardcode svn info
 sed -i -e 's#^pwhg_main:#$$(shell ../svnversion/svnversion.sh>/dev/null) \
 \
