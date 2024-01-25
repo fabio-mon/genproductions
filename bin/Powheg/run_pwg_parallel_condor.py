@@ -102,7 +102,7 @@ if __name__ == "__main__":
             njobs = '1'
         
         commonOpts='-i '+args.inputTemplate+' -m '+args.prcName+' -f '+args.folderName+' -j '+njobs+' --fordag 1'
-        commonOpts+=' --svn %i' % args.svnRev
+        commonOpts+=' --svn %s' % args.svnRev
         if args.slc == '6':
             commonOpts+=' --slc6 1 '
         if args.eosFolder != 'NONE':

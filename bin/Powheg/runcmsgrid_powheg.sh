@@ -82,7 +82,8 @@ process="PROCESS"
 export WORKDIR=`pwd`
 
 # LHAPDF setup
-LHAPDFCONFIG=`echo "$LHAPDF_DATA_PATH/../../bin/lhapdf-config"`
+#LHAPDFCONFIG=`echo "$LHAPDF_DATA_PATH/../../bin/lhapdf-config"`
+LHAPDFCONFIG=`echo /cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/lhapdf/6.4.0-6e1c0caa626970b41aec7b22a0ff6a95/share/LHAPDF/../../bin/lhapdf-config`
 #if lhapdf6 external is available then above points to lhapdf5 and needs to be overridden
 LHAPDF6TOOLFILE=$CMSSW_BASE/config/toolbox/$SCRAM_ARCH/tools/available/lhapdf6.xml
 if [ -e $LHAPDF6TOOLFILE ]; then

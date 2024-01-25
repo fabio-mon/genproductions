@@ -205,7 +205,8 @@ fi
 
 $patch_5 
 
-echo "LHAPDF_CONFIG=$${LHAPDF_BASE}/bin/lhapdf-config" >> tmpfile
+#echo "LHAPDF_CONFIG=$${LHAPDF_BASE}/bin/lhapdf-config" >> tmpfile
+echo "LHAPDF_CONFIG=/cvmfs/cms.cern.ch/slc7_amd64_gcc700/external/lhapdf/6.4.0-6e1c0caa626970b41aec7b22a0ff6a95/share/LHAPDF/../../bin/lhapdf-config" >> tmpfile
 mv Makefile Makefile.interm
 cat tmpfile Makefile.interm > Makefile
 rm -f Makefile.interm tmpfile
